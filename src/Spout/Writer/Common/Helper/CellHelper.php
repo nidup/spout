@@ -65,6 +65,19 @@ class CellHelper
     }
 
     /**
+     * From https://github.com/box/spout/pull/425
+     *
+     * Returns whether the given value looks like a formula
+     *
+     * @param $value
+     * @return bool whether the given value looks like a formula
+     */
+    public static function isFormulaString($value)
+    {
+        return (strpos($value,'=') === 0);
+    }
+
+    /**
      * Returns whether the given value is numeric.
      * A numeric value is from type "integer" or "double" ("float" is not returned by gettype).
      *
